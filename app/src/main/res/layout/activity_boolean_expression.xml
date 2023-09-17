@@ -1,0 +1,346 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Common.TruthTableActivity"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                android:elevation="4dp"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme">
+
+                <!-- Back arrow icon -->
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="Back"
+                    android:src="@drawable/round_arrow_back_24" />
+
+                <!-- Title -->
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Boolean Expression"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.472"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/bottomLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/input_bg"
+                android:orientation="horizontal"
+                android:elevation="1dp">
+
+                <EditText
+                    android:layout_width="422dp"
+                    android:layout_height="117dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Enter Expression"
+                    android:imeOptions="normal"
+                    android:inputType="text"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="@color/green"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/generateButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/button_bg"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Generate"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:elevation="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/input_bg"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Use the characters below for logical operators:"
+                    android:textColor="@color/green"
+                    android:textSize="14sp" />
+
+                <TableLayout
+                    android:id="@+id/operatorsTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:stretchColumns="1"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+                    <!-- Table header -->
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/green"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="Operators"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/green"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="Symbol to Use"
+                            android:textColor="@color/white" />
+                    </TableRow>
+
+                    <!-- Rows in the truth table -->
+                    <!-- Add more rows as needed -->
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="OR"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="|"
+                            android:textColor="@color/green" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="AND"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="&amp;"
+                            android:textColor="@color/green" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="NOT"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="! / ~ / '"
+                            android:textColor="@color/green" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="XOR"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="⊕"
+                            android:textColor="@color/green" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="Implication"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="> / -> / =>"
+                            android:textColor="@color/green" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="Equivalence"
+                            android:textColor="@color/green" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="="
+                            android:textColor="@color/green" />
+                    </TableRow>
+
+
+                    <!-- Add more rows as needed -->
+                    <!-- ... -->
+                </TableLayout>
+            </LinearLayout>
+
+
+            <!-- TableLayout for the truth table -->
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For propositional logic formulas, you can enter logical operators in this example format: p q → ¬r could be written as p /\ q -> ~r. The connectives    and   can be entered as T and F."
+                android:background="@drawable/input_bg"
+                android:textSize="14sp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:padding="10dp"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
